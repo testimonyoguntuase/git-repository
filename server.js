@@ -2,10 +2,17 @@ import express from "express"
 import mongoose from "mongoose"
 import userRoute from "./routes/userRoute.js"
 import "dotenv/config"
+import jwt from "jsonwebtoken"
 const app = express()
 app.use(express.json())
 
 app.use("/api/users", userRoute)
+
+
+// creating a token 
+
+
+
 
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=> {
